@@ -103,3 +103,5 @@ En la carpeta donde está ubicado el proyecto se encuentran los archivos con ext
 Luna Palafox Ana Paola
 
 Rivera Urias Denzel Omar
+
+Reyes Casillas Jovanna Amiraxel
