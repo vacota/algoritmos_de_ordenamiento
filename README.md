@@ -19,6 +19,7 @@ Los elementos a ordenar son números enteros del 1 al 1000 generados de manera a
 - **CMake** para la correcta ejecución del proyecto
 
 ## Instalación 🔧
+Desde la terminal
 1. Clone el repositorio:
    ```sh
    git clone https://github.com/vacota/algoritmos_de_ordenamiento.git
@@ -35,6 +36,9 @@ Los elementos a ordenar son números enteros del 1 al 1000 generados de manera a
    ```sh
    ./sorting_time
    ```
+
+Forma práctica
+Descargando el archivo y compilarlo desde el IDE de preferencia.
 
 ## Proyecto 📖
 
