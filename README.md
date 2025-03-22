@@ -85,10 +85,15 @@ Lo que se hizo fue mandar al archivo cada elemento individual de las matrices, d
 ## Configuración de variables constantes 🔢
 
 NUM_PRUEBAS: Número de pruebas que se realizarán para cada tamaño de arreglo.
+
 MIN_TAMANO: Tamaño mínimo del arreglo a ordenar.
+
 MAX_TAMANO: Tamaño máximo del arreglo a ordenar.
+
 INCREMENTO: Incremento en el tamaño del arreglo entre las pruebas.
+
 NUM_ALGORITMOS: Número de algoritmos de ordenamiento que se probarán (no modificar a menos que se agregue otro algoritmo al programa).
+
 
 ## Resultado final ✔️
 
