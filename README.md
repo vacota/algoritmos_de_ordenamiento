@@ -59,9 +59,35 @@ Al empezar el programa se generarían 10 números aleatorios en dicho arreglo, p
 
 **¿Por qué pasa esto?** Esto pasa debido a los números basura que se encuentran en la memoria de la computadora, **¿pero deberíamos preocuparnos por ellos?** la respuesta es que no, debido a que el programa está diseñado para que **no** se pueda acceder a ese espacio del arreglo hasta que se hayan generado nuevos números aleatorios en esas posiciones y hasta que nuestro contador que mida la longitud lo permita.
 
-      #### Algoritmos de ordenamiento
+   #### Algoritmos de ordenamiento
 
+Los algoritmos de ordenamiento se encuentran ubicados en funciones para preservar la legibilidad del código y mantenerlos portables y actualizables, y fueron creados basados en el pseudocódigo proporcionado en clase.
 
+   #### Guardado de tiempos
 
+Para guardar el tiempo transcurrido entre cada ejecución hicimos un cronómetro que inicia previo a la ejecución del algoritmo, luego este último se ejecuta y se para justo después de ello.
 
+Estos tiempos son guardados en una matriz correspondiente al almacenamiento del tiempo de cada algoritmo, guardado el tiempo de cada iteración para cada tamaño en las columnas, y las filas indican el número de iteración en el que se ejecutó.
 
+El promedio de cada una de las iteraciones del mismo tamaño se guarda al final de cada columna de dichas matrices.
+
+   #### Exportado de los datos
+Se utilizó una librería de la biblioteca estandar para exportar estos archivos y el formato que les dimos fue el de .csv (comma-separated values, o valores separados por comas en español), en el que se tuvo mucho cuidado de que cada tiempo se escribiera en su columna y renglón correspondiente.
+
+Lo que se hizo fue mandar al archivo cada elemento individual de las matrices, de manera similar a la que se imprimen elementos en pantalla, pero asegurandonos de que cada elemento tenga su coma al final.
+
+## Configuración de variables constantes
+
+NUM_PRUEBAS: Número de pruebas que se realizarán para cada tamaño de arreglo.
+MIN_TAMANO: Tamaño mínimo del arreglo a ordenar.
+MAX_TAMANO: Tamaño máximo del arreglo a ordenar.
+INCREMENTO: Incremento en el tamaño del arreglo entre las pruebas.
+NUM_ALGORITMOS: Número de algoritmos de ordenamiento que se probarán (no modificar a menos que se agregue otro algoritmo al programa).
+
+## Resultado final
+
+En la carpeta donde está ubicado el proyecto se encuentran los archivos con extensión .csv con todos los datos obtenidos por este programa. Para mejor visualización de estos resultados se recomienda abir los archivos con un editor/visualizador de hojas de cálculo. El tiempo dado está medido en nanosegundos.
+
+## Integrantes del equipo
+Luna Palafox Ana Paola
+Rivera Urias Denzel Omar
