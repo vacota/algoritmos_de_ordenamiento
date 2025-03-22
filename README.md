@@ -38,6 +38,7 @@ Desde la terminal:
    ```
 
 Forma práctica:
+
 Descargando el archivo y compilarlo desde el IDE de preferencia.
 
 ## Proyecto 📖
