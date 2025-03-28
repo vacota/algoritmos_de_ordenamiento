@@ -252,14 +252,26 @@ De la realización de esta actividad con la creación del proyecto que nos incit
 El top de los mejores según nuestro análisis de ellos es:
 
    1.- Ordenamiento rápido
+   
    2.- Ordenamiento por mezcla
+   
    3.- Ordenamiento shell
+   
    4.- Ordenamiento por montículos
+
    5.- Ordenamiento por inserción
+
    6.- Ordenamiento por selección
-   7.- Ordenamiento burbuja   
+   
+   7.- Ordenamiento burbuja
 
 Lo podemos observar en la siguiente gráfica comparativa:
+
+![Algoritmos_de_ordenamiento](Algoritmos_de_ordenamiento.png)
+
+Los mejores se observan mejor en esta gráfica:
+
+![Ordenamientos_mejores](Ordenamientos_mejores.png)
 
 
 
