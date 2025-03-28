@@ -29,6 +29,7 @@ void swap(int* a, int* b);
 int Partition(int arr[], int inicio, int fin);
 void QuickSortHelper(int arr[], int inicio, int fin);
 void heapify(int arr[], int length, int i);
+void copy_array(int arr[], int disord[], int length);
 
 using namespace std;
 using namespace std::chrono;
@@ -46,6 +47,7 @@ int main() {
     srand(time(nullptr));
     const int length = MAX_TAMANO;
     int arr[length];
+    int disord[length];
     int iterations = NUM_PRUEBAS+1;
     int column_counter = 1;
     int length_counter = MIN_TAMANO;
@@ -77,9 +79,10 @@ int main() {
 
 
                 // Insertion
+            copy_array(arr, disord, length_counter);
             // Inicia el timer
             auto insertion_start = high_resolution_clock::now();
-            insertion_sort(arr, length_counter);
+            insertion_sort(disord, length_counter);
             // Termina el timer
             auto insertion_end = high_resolution_clock::now();
             duration<double> insertion_duration = insertion_end - insertion_start;
@@ -87,9 +90,10 @@ int main() {
             total_insertion += insertion_time[i][column_counter];
 
                 // Bubble
+            copy_array(arr, disord, length_counter);
             // Inicia el timer
             auto bubble_start = high_resolution_clock::now();
-            bubble_sort(arr, length_counter);
+            bubble_sort(disord, length_counter);
             // Termina el timer
             auto bubble_end = high_resolution_clock::now();
             duration<double> bubble_duration = bubble_end - bubble_start;
@@ -97,9 +101,10 @@ int main() {
             total_bubble += bubble_time[i][column_counter];
 
                 // Selection
+            copy_array(arr, disord, length_counter);
             // Inicia el timer
             auto selection_start = high_resolution_clock::now();
-            selection_sort(arr, length_counter);
+            selection_sort(disord, length_counter);
             // Termina el timer
             auto selection_end = high_resolution_clock::now();
             duration<double> selection_duration = selection_end - selection_start;
@@ -107,9 +112,10 @@ int main() {
             total_selection += selection_time[i][column_counter];
 
                 // Merge
+            copy_array(arr, disord, length_counter);
             // Inicia el timer
             auto merge_start = high_resolution_clock::now();
-            merge_sort(arr, length_counter);
+            merge_sort(disord, length_counter);
             // Termina el timer
             auto merge_end = high_resolution_clock::now();
             duration<double> merge_duration = merge_end - merge_start;
@@ -117,9 +123,10 @@ int main() {
             total_merge += merge_time[i][column_counter];
 
                 // Quick
+            copy_array(arr, disord, length_counter);
             // Inicia el timer
             auto quick_start = high_resolution_clock::now();
-            quick_sort(arr, length_counter);
+            quick_sort(disord, length_counter);
             // Termina el timer
             auto quick_end = high_resolution_clock::now();
             duration<double> quick_duration = quick_end - quick_start;
@@ -127,9 +134,10 @@ int main() {
             total_quick += quick_time[i][column_counter];
 
                 // Heap
+            copy_array(arr, disord, length_counter);
             // Inicia el timer
             auto heap_start = high_resolution_clock::now();
-            heap_sort(arr, length_counter);
+            heap_sort(disord, length_counter);
             // Termina el timer
             auto heap_end = high_resolution_clock::now();
             duration<double> heap_duration = heap_end - heap_start;
@@ -137,9 +145,10 @@ int main() {
             total_heap += heap_time[i][column_counter];
 
                 // Shell
+            copy_array(arr, disord, length_counter);
             // Inicia el timer
             auto shell_start = high_resolution_clock::now();
-            shell_sort(arr, length_counter);
+            shell_sort(disord, length_counter);
             // Termina el timer
             auto shell_end = high_resolution_clock::now();
             duration<double> shell_duration = shell_end - shell_start;
@@ -149,13 +158,13 @@ int main() {
         }
         cout << "Algoritmos en longitud " << length_counter << " ejecutados!" << endl << endl;
 
-        insertion_time[(MAX_TAMANO/INCREMENTO)+1][j-1] = total_insertion / 1000.0;
-        bubble_time[(MAX_TAMANO/INCREMENTO)+1][j-1] = total_bubble / 1000.0;
-        selection_time[(MAX_TAMANO/INCREMENTO)+1][j-1] = total_selection / 1000.0;
-        merge_time[(MAX_TAMANO/INCREMENTO)+1][j-1] = total_merge / 1000.0;
-        quick_time[(MAX_TAMANO/INCREMENTO)+1][j-1] = total_quick / 1000.0;
-        heap_time[(MAX_TAMANO/INCREMENTO)+1][j-1] = total_heap / 1000.0;
-        shell_time[(MAX_TAMANO/INCREMENTO)+1][j-1] = total_shell / 1000.0;
+        insertion_time[(NUM_PRUEBAS)+1][j-1] = total_insertion / 1000.0;
+        bubble_time[(NUM_PRUEBAS)+1][j-1] = total_bubble / 1000.0;
+        selection_time[(NUM_PRUEBAS)+1][j-1] = total_selection / 1000.0;
+        merge_time[(NUM_PRUEBAS)+1][j-1] = total_merge / 1000.0;
+        quick_time[(NUM_PRUEBAS)+1][j-1] = total_quick / 1000.0;
+        heap_time[(NUM_PRUEBAS)+1][j-1] = total_heap / 1000.0;
+        shell_time[(NUM_PRUEBAS)+1][j-1] = total_shell / 1000.0;
 
         column_counter++;
         length_counter += INCREMENTO;
@@ -169,7 +178,7 @@ int main() {
         total_shell = 0;
     }
 
-    int recorrido = (MAX_TAMANO/INCREMENTO)+1;
+    int recorrido = (MAX_TAMANO/INCREMENTO+1);
     int tamanos = (MAX_TAMANO/INCREMENTO);
 
         // Insersion
@@ -184,7 +193,8 @@ int main() {
         outFileInsertion << "Tama\361o " << length_counter << ",";
         length_counter += INCREMENTO;
     }
-    for (int i = 0; i < iterations; i++){
+    outFileInsertion << endl;
+    for (int i = 1; i < iterations; i++){
         outFileInsertion << i << ",";
         for (int j = 1; j < recorrido; j++){
             outFileInsertion <<  insertion_time[i][j] << ",";
@@ -193,7 +203,7 @@ int main() {
     }
     outFileInsertion << "Promedio:,";
     for (int i = 0; i < tamanos; i++) {
-        outFileInsertion << insertion_time[recorrido][i] << ",";
+        outFileInsertion << insertion_time[NUM_PRUEBAS+1][i] << ",";
     }
     outFileInsertion.close();
 
@@ -210,7 +220,8 @@ int main() {
         outFileBubble << "Tama\361o " << length_counter << ",";
         length_counter += INCREMENTO;
     }
-    for (int i = 0; i < iterations; i++){
+    outFileBubble << endl;
+    for (int i = 1; i < iterations; i++){
         outFileBubble << i << ",";
         for (int j = 1; j < recorrido; j++){
             outFileBubble <<  bubble_time[i][j] << ",";
@@ -219,7 +230,7 @@ int main() {
     }
     outFileBubble << "Promedio:,";
     for (int i = 0; i < tamanos; i++) {
-        outFileBubble << bubble_time[recorrido][i] << ",";
+        outFileBubble << bubble_time[NUM_PRUEBAS+1][i] << ",";
     }
     outFileBubble.close();
 
@@ -236,7 +247,8 @@ int main() {
         outFileSelection << "Tama\361o " << length_counter << ",";
         length_counter += INCREMENTO;
     }
-    for (int i = 0; i < iterations; i++){
+    outFileSelection << endl;
+    for (int i = 1; i < iterations; i++){
         outFileSelection << i << ",";
         for (int j = 1; j < recorrido; j++){
             outFileSelection <<  selection_time[i][j] << ",";
@@ -245,7 +257,7 @@ int main() {
     }
     outFileSelection << "Promedio:,";
     for (int i = 0; i < tamanos; i++) {
-        outFileSelection << selection_time[recorrido][i] << ",";
+        outFileSelection << selection_time[NUM_PRUEBAS+1][i] << ",";
     }
     outFileSelection.close();
 
@@ -261,7 +273,8 @@ int main() {
         outFileMerge << "Tama\361o " << length_counter << ",";
         length_counter += INCREMENTO;
     }
-    for (int i = 0; i < iterations; i++){
+    outFileMerge << endl;
+    for (int i = 1; i < iterations; i++){
         outFileMerge << i << ",";
         for (int j = 1; j < recorrido; j++){
             outFileMerge <<  merge_time[i][j] << ",";
@@ -270,7 +283,7 @@ int main() {
     }
     outFileMerge << "Promedio:,";
     for (int i = 0; i < tamanos; i++) {
-        outFileMerge << merge_time[recorrido][i] << ",";
+        outFileMerge << merge_time[NUM_PRUEBAS+1][i] << ",";
     }
     outFileMerge.close();
 
@@ -288,7 +301,8 @@ int main() {
         outFileQuick << "Tama\361o " << length_counter << ",";
         length_counter += INCREMENTO;
     }
-    for (int i = 0; i < iterations; i++){
+    outFileQuick << endl;
+    for (int i = 1; i < iterations; i++){
         outFileQuick << i << ",";
         for (int j = 1; j < recorrido; j++){
             outFileQuick <<  quick_time[i][j] << ",";
@@ -297,7 +311,7 @@ int main() {
     }
     outFileQuick << "Promedio:,";
     for (int i = 0; i < tamanos; i++) {
-        outFileQuick << quick_time[recorrido][i] << ",";
+        outFileQuick << quick_time[NUM_PRUEBAS+1][i] << ",";
     }
     outFileQuick.close();
 
@@ -314,7 +328,8 @@ int main() {
         outFileHeap << "Tama\361o " << length_counter << ",";
         length_counter += INCREMENTO;
     }
-    for (int i = 0; i < iterations; i++){
+    outFileHeap << endl;
+    for (int i = 1; i < iterations; i++){
         outFileHeap << i << ",";
         for (int j = 1; j < recorrido; j++){
             outFileHeap <<  heap_time[i][j] << ",";
@@ -323,7 +338,7 @@ int main() {
     }
     outFileHeap << "Promedio:,";
     for (int i = 0; i < tamanos; i++) {
-        outFileHeap << heap_time[recorrido][i] << ",";
+        outFileHeap << heap_time[NUM_PRUEBAS+1][i] << ",";
     }
     outFileHeap.close();
 
@@ -340,7 +355,8 @@ int main() {
         outFileShell << "Tama\361o " << length_counter << ",";
         length_counter += INCREMENTO;
     }
-    for (int i = 0; i < iterations; i++){
+    outFileShell << endl;
+    for (int i = 1; i < iterations; i++){
         outFileShell << i << ",";
         for (int j = 1; j < recorrido; j++){
             outFileShell <<  shell_time[i][j] << ",";
@@ -349,13 +365,20 @@ int main() {
     }
     outFileShell << "Promedio:,";
     for (int i = 0; i < tamanos; i++) {
-        outFileShell << shell_time[recorrido][i] << ",";
+        outFileShell << shell_time[NUM_PRUEBAS+1][i] << ",";
     }
     outFileShell.close();
 
     cout << "Se han generado los archivos con extensi\242n .csv de todos los algoritmos." << endl;
 
     return 0;
+}
+
+// Copiar arreglo
+void copy_array(int arr[], int disord[], int length) {
+    for (int i = 0; i < length; i++) {
+        disord[i] = arr[i];
+    }
 }
 
 void insertion_sort(int arr[], int n) {
