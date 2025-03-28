@@ -46,84 +46,145 @@ Descargando el archivo y compilarlo desde el IDE de preferencia.
 
 ### Inserción
 Es un algoritmo de ordenamiento simple que construye la lista ordenada insertando cada elemento en su posición correcta dentro de los elementos ya ordenados. Es un algoritmo in-place (no requiere memoria adicional significativa) y estable (mantiene el orden relativo de elementos iguales).
+
 Funcionamiento
+
 -Se comienza desde el segundo elemento de la lista, ya que el primero se considera ordenado.
+
 -Se compara el elemento actual con los anteriores en la lista ordenada.
+
 -Se desplazan los elementos mayores hacia la derecha para hacer espacio.
+
 -Se inserta el elemento en la posición correcta.
+
 -Se repite el proceso hasta que la lista esté ordenada.
+
 Complejidad:
+
 -Mejor caso: O(n)
+
 -Peor caso: O(n²)
+
 -Caso promedio: O(n²)
 
 ### Burbuja
 Es un algoritmo de ordenamiento simple que compara repetidamente elementos adyacentes e intercambia aquellos que están en el orden incorrecto. Este proceso se repite hasta que la lista esté ordenada. Es un algoritmo in-place (no requiere memoria extra significativa) y estable (mantiene el orden relativo de elementos iguales).
+
 Funcionamiento
+
 -Se recorren los elementos de la lista comparando pares adyacentes.
+
 -Si un elemento es mayor que el siguiente, se intercambian.
+
 -Se repite el proceso hasta que no haya más intercambios en una pasada completa.
+
 Complejidad
+
 -Mejor caso: O(n)
+
 -Peor caso: O(n²)
+
 -Caso promedio: O(n²)
 
 ### Selección
 Es un algoritmo de ordenamiento que divide la lista en una parte ordenada y otra no ordenada. En cada iteración, selecciona el elemento más pequeño de la parte no ordenada y lo intercambia con el primer elemento no ordenado. Es un algoritmo in-place (no requiere memoria extra significativa) pero no es estable, ya que puede cambiar el orden relativo de elementos iguales.
+
 Funcionamiento
+
 -Se recorre la lista y se busca el elemento más pequeño.
+
 -Se intercambia con el primer elemento no ordenado.
+
 -Se repite el proceso con el resto de la lista hasta que esté completamente ordenada.
+
 Complejidad:
+
 -Mejor caso: O(n²)
+
 -Peor caso: O(n²)
+
 -Caso promedio: O(n²)
 
 ### Mezcla
 Es un algoritmo de ordenamiento eficiente que sigue el paradigma divide y vencerás. Divide la lista en dos mitades, ordena cada mitad recursivamente y luego las combina en una sola lista ordenada. Es un algoritmo estable y tiene una complejidad O(n log n) en todos los casos.
+
 Funcionamiento
+
 -Si la lista tiene uno o cero elementos, ya está ordenada.
+
 -Se divide la lista en dos mitades.
+
 -Se ordenan ambas mitades recursivamente con Merge Sort.
+
 -Se combinan las dos mitades ordenadas en una sola lista.
+
 Complejidad
+
 -Mejor caso: O(n log n)
+
 -Peor caso: O(n log n)
+
 -Caso promedio: O(n log n)
 
 ### Rapido
 Es un algoritmo de ordenamiento eficiente basado en el paradigma divide y vencerás. Selecciona un elemento como pivote, divide la lista en dos sublistas (menores y mayores al pivote) y luego ordena ambas sublistas recursivamente. Es un algoritmo in-place y generalmente más rápido que Merge Sort en la práctica.
+
 Funcionamiento
+
 -Se elige un elemento como pivote.
+
 -Se reorganizan los elementos, colocando los menores al pivote a su izquierda y los mayores a su derecha.
+
 -Se aplica Quick Sort recursivamente a ambas sublistas.
+
 -La lista queda ordenada cuando todas las sublistas están ordenadas.
+
 Complejidad
+
 -Mejor caso: O(n log n)
+
 -Peor caso: O(n²)
+
 -Caso promedio: O(n log n)
 
 ### Montículo
 Es un algoritmo de ordenamiento basado en una estructura de montículo (heap). Convierte la lista en un montículo máximo (max-heap), luego extrae el elemento más grande (raíz) y lo coloca en su posición final, repitiendo el proceso hasta ordenar toda la lista. Es un algoritmo in-place, pero no es estable.
+
 Funcionamiento
+
 -Se construye un montículo máximo a partir de la lista.
+
 -Se intercambia el primer elemento (máximo) con el último y se reduce el tamaño del montículo.
+
 -Se reestructura el montículo y se repite hasta que toda la lista esté ordenada.
+
 Complejidad
+
 -Mejor caso: O(n log n)
+
 -Peor caso: O(n log n)
+
 -Caso promedio: O(n log n)
 
 ### Shell
 Es una mejora del ordenamiento por inserción que permite realizar intercambios a mayor distancia antes de ordenar elementos cercanos. Utiliza una secuencia de incrementos (gaps) para dividir la lista en subgrupos y ordenarlos con inserción, reduciendo progresivamente el gap hasta que sea 1. Es un algoritmo in-place, pero no es estable.
+
 Funcionamiento
+
 -Se elige una secuencia de gaps.
+
 -Para cada gap, se ordenan los elementos separados por esa distancia con inserción.
+
 -Se reduce el gap y se repite hasta que sea 1.
+
 -Finalmente, se aplica una última inserción para terminar de ordenar la lista.
+
 Complejidad
+
 -Mejor caso: O(n log n)
+
 -Peor caso: O(n²)
+
 -Caso promedio: Depende de la secuencia de gaps
 
 
