@@ -245,6 +245,10 @@ NUM_ALGORITMOS: Número de algoritmos de ordenamiento que se probarán (no modif
 
 En la carpeta donde está ubicado el proyecto se encuentran los archivos con extensión .csv con todos los datos obtenidos por este programa. Para mejor visualización de estos resultados se recomienda abir los archivos con un editor/visualizador de hojas de cálculo. El tiempo dado está medido en nanosegundos.
 
+## Conclusiones
+
+De la realización de esta actividad con la creación del proyecto que nos incita a realizar un análisis experimental del comportamiento de algunos algoritmos de ordenamiento
+
 ## Creador 
 
 Rivera Urias Denzel Omar
