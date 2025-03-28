@@ -245,10 +245,24 @@ NUM_ALGORITMOS: Número de algoritmos de ordenamiento que se probarán (no modif
 
 En la carpeta donde está ubicado el proyecto se encuentran los archivos con extensión .csv con todos los datos obtenidos por este programa. Para mejor visualización de estos resultados se recomienda abir los archivos con un editor/visualizador de hojas de cálculo. El tiempo dado está medido en nanosegundos.
 
-## Conclusiones
+## Conclusiones 🚩
 
-De la realización de esta actividad con la creación del proyecto que nos incita a realizar un análisis experimental del comportamiento de algunos algoritmos de ordenamiento
+De la realización de esta actividad con la creación del proyecto que nos incita a realizar un análisis experimental del comportamiento de algunos algoritmos de ordenamiento podemos concluír cuales de ellos son los más óptimos para realizar el ordenamiento de listas desordenadas.
 
-## Creador 
+El top de los mejores según nuestro análisis de ellos es:
+
+   1.- Ordenamiento rápido
+   2.- Ordenamiento por mezcla
+   3.- Ordenamiento shell
+   4.- Ordenamiento por montículos
+   5.- Ordenamiento por inserción
+   6.- Ordenamiento por selección
+   7.- Ordenamiento burbuja   
+
+Lo podemos observar en la siguiente gráfica comparativa:
+
+
+
+## Creador 🐐
 
 Rivera Urias Denzel Omar
